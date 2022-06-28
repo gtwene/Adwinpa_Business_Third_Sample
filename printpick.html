@@ -9,7 +9,7 @@
     <meta name="author" content="TemplateMo">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
-    <title>Lava Landing Page HTML Template</title>
+    <title>Adwinpa Business</title>
 <!--
 
 Lava Landing Page
@@ -142,15 +142,48 @@ https://templatemo.com/tm-540-lava-landing-page
                                 </div>
                                 <div class="col-md-6 col-sm-12">
                                     <fieldset>
-                                        <input name="email" type="file" id="email" placeholder="Upload File" name="myfile"
+                                        <input type="file" id="email" placeholder="Upload File" name="myfile"
                                             required="" style="background-color: rgba(250,250,250,0.3);">
                                     </fieldset>
                                 </div>
                                 <div class="col-md-6 col-sm-12">
-                                    <fieldset>
-                                        <input name="email" type="text" id="email" placeholder="Black & White Or Colored ?"
-                                            required="" style="background-color: rgba(250,250,250,0.3);">
-                                    </fieldset>
+                                    <select name="bnwnc" id="bnwnc" onchange="calculateAmount(this.value)"  style="width: 210px; height: 46px; background-color: rgba(250,250,250,0.3); ;">
+                                        
+                                        <option value="" disabled selected>-- Black & White Or Colored ? --</option>
+                                        <option value= 0.30 > Black & White </option>
+                                        <option value= 0.50 > Colored </option>
+                                        <!-- <fieldset>
+                                            <input name="email" type="text" id="email" placeholder="Black & White Or Colored ?"
+                                                required="" style="background-color: rgba(250,250,250,0.3);">
+                                        </fieldset> -->
+                                    </select>
+                                   
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <select name="tot_pin_requested" onchange="getprice(this.value)" id="tot_pin_requested"  style="width: 210px; height: 46px; background-color: rgba(250,250,250,0.3); ;">
+                                        
+                                        <option value="" disabled selected>-- Select The Quantity --</option>  
+                                            <option value="1"> 1 </option>  
+                                            <option value="2"> 2 </option>  
+                                            <option value="3"> 3 </option>  
+                                            <option value="4"> 4 </option>  
+                                            <option value="5"> 5 </option>  
+                                            <option value="6"> 6 </option>  
+                                            <option value="7"> 7 </option>  
+                                            <option value="8"> 8 </option>  
+                                            <option value="9"> 9 </option>  
+                                            <option value="10"> 10 </option>
+                                    </select>
+                                   
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                        
+                                        <fieldset>
+                                            <input name="tot_amount" id="tot_amount" type="text" onchange="getprice()" placeholder="Total Amount"
+                                                 style="background-color: rgba(250,250,250,0.3);" >
+                                        </fieldset>
+                                
+                                   
                                 </div>
                                 <div class="col-lg-12">
                                     <fieldset>
@@ -201,6 +234,7 @@ https://templatemo.com/tm-540-lava-landing-page
 
     <!-- Global Init -->
     <script src="assets/js/custom.js"></script>
+    <script src="computation.js"></script>
 
 </body>
 </html>
