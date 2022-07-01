@@ -48,3 +48,29 @@ function Lamination(selLami) {
     document.getElementById("SelectYes").disabled = true;
   }
 }
+
+function calculateResultsCheck(results) {
+  //   var blacknwhite = document.getElementById();
+  var tot_price = results;
+  document.getElementById("tot_Estimate").value = `GHS ${tot_price}`;
+}
+
+function resultsCheck() {
+  var TypeOfCard = document.getElementById("TypeOfCard").value;
+  var quantity = document.getElementById("quantity").value;
+
+  var TotalResultsCheck = TypeOfCard * quantity;
+
+  document.getElementById("tot_Estimate").value = `GHS ${TotalResultsCheck}`;
+}
+
+function PayWithMomoORCard(paywith) {
+  console.log(paywith.value);
+  if (paywith.value == 1) {
+    document.getElementById("PayForYourCard").disabled = false;
+    document.getElementById("PayForYourCard").hidden = false;
+  } else {
+    document.getElementById("PayForYourCard").disabled = true;
+    document.getElementById("PayForYourCard").hidden = true;
+  }
+}
