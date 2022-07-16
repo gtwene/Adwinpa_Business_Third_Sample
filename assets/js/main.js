@@ -104,13 +104,13 @@ const buyCardCheckResults = (val) => {
   //   document.getElementById("tot_cost").value = `GHS ${getResults}`;
   //   console.log(getResults);
   // }
-   
+
   if (howtogetResults == 3) {
     const getResults =
-      BuyCardChechValue * blacknwhite + (Number(deliver)) + Number(typeOfCardDo);
+      BuyCardChechValue * blacknwhite + Number(deliver) + Number(typeOfCardDo);
     document.getElementById("tot_cost").value = `GHS ${getResults}`;
     console.log(getResults);
-  } 
+  }
 };
 
 function submitOutFunc() {
@@ -128,7 +128,7 @@ function submitOutFunc() {
   var binding = document.getElementById("binding").value;
   var payment = document.getElementById("payment").value;
   var deliver = document.getElementById("deliver").value;
-  var copiesCardCheck = document.getElementById('copiesCardCheck').value;
+  var copiesCardCheck = document.getElementById("copiesCardCheck").value;
   // console.log(name);
   // console.log(contactno)
 
@@ -146,7 +146,8 @@ function submitOutFunc() {
       blacknwhite * copies +
       Number(lamination) +
       Number(envelope) +
-      Number(binding) + Number(copiesCardCheck) +
+      Number(binding) +
+      Number(copiesCardCheck) +
       Number(deliver);
     document.getElementById("tot_cost").value = `GHS ${AddCost}`;
   }
@@ -154,21 +155,6 @@ function submitOutFunc() {
 
 (function ($) {
   $("#submit").on("click", function () {
-    var name = document.getElementById("name").value;
-    var contactno = document.getElementById("contactno").value;
-    var address = document.getElementById("address").value;
-    var above = document.getElementById("above").value;
-
-    // Select Fields
-    var color = document.getElementById("color").value;
-    var blacknwhite = document.getElementById("blacknwhite").value;
-    var copies = document.getElementById("copies").value;
-    var pickup = document.getElementById("pickup").value;
-    var lamination = document.getElementById("lamination").value;
-    var envelope = document.getElementById("envelope").value;
-    var binding = document.getElementById("binding").value;
-    var payment = document.getElementById("payment").value;
-
     Swal.fire({
       position: "center",
       icon: "success",
