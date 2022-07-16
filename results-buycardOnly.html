@@ -85,12 +85,12 @@
         <div class="container">
             <div class="signup-content">
                 <div class="signup-img">
-                    <img src="https://i0.wp.com/www.alphr.com/wp-content/uploads/2020/11/pixabay-printer-1910685_1280.png?ssl=1" style="height: 600px; width: 700px" alt="">
+                    <img src="images/WAEC.jpg" style="height: 600px; width: 700px" alt="">
                 </div>
                 <div class="signup-form">
                     <form method="POST" class="register-form" id="register-form">
-                        <h2>Get your passport</h2>
-                        <!-- <a href="delivery.html" style="font-size: 15px;  padding: 5px">Delivery</a>
+                        <h2>Buy card only</h2>
+                        <!-- <<a href="delivery.html" style="font-size: 15px;  padding: 5px">Delivery</a>
                         <a href="results-buycardOnly.html" style="font-size: 15px;  padding: 5px">Buy Card Only</a>
                         <a href="buycardcheckresults.html" style="font-size: 15px;  padding: 5px">Check results</a>
                         <a href="passport.html" style="font-size: 15px; padding: 5px">passport</a>
@@ -113,65 +113,47 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="address">Email Address :</label>
+                            <label for="address">Email Address for receiving card :</label>
                             <input type="text" name="address" id="address" required/>
                         </div>
 
                         <div class="form-group">
-                            <label for="state">What type of passport do you want ? :</label>
-                            <div class="form-select">
-                                <select name="cbw" id="" onchange="disableColorOrBW(this)">
+                            <label for="state">what type of card do you want to buy ? :</label>
+                            <div class="form-select" required>
+                                <select name="typeOfCardDo" id="typeOfCardDo" onchange="typeofCard(this.value)">
                                     <option value=""></option>
-                                    <option value= 1 >New</option>
-                                    <option value= 2 >Renewal</option>
+                                    <option value="16">BECE result checker</option>
+                                    <option value="16">WASSCE result checker</option>
+                                    <option value="16">NOV-DEC result checker</option>
+                                    <option value="16">School placement card</option>
                                 </select>
                                 <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
                             </div>
                         </div>
-
-                        <div class="form-group" id="colordiv" type="hidden">
-                            <label>When do you want your new passport ? :</label>
-                            <div class="form-select">
-                                <select name="color" id="color" disabled="" onchange="EveryResults(this.value)">
-                                    <option value=""></option>
-                                    <option value= 50 >In one month </option>
-                                    <option value= 20 >In two months</option>
-                                    <option value= 20>In three months</option>
-                                    <option value= 20>In five months</option>
-                                    <option value= 20>In over five months</option>
-                                </select>
-                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
-                            </div>
-                        </div>
-                        <div class="form-group" id="blacknwhitediv">
-                            <label>When do you want your passport renewed ? :</label>
-                            <div class="form-select">
-                                <select name="blacknwhite" id="blacknwhite" disabled="" onchange="EveryResults(this.value)" >
-                                    <option value=""></option>
-                                    <option value= 50 >In one month </option>
-                                    <option value= 20 >In two months</option>
-                                    <option value= 20 >In three months</option>
-                                    <option value= 20 >In five months</option>
-                                    <option value= 20 >In over five months</option>
-                                </select>
-                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
-                            </div>
-                        </div>
-
+                        
                         <div class="form-group">
-                            <label for="address">Upload you birth Certificate :</label>
-                            <input type="file" name="file" id="file" required/>
+                            <label for="state">Quantity ? :</label>
+                            <div class="form-select">
+                                <select name="quantity" id="quantity" onchange="BuyCardOnly(this.value)">
+                                    <option value=""></option>
+                                    <option value= 1>1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                </select>
+                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                            </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="birth_date">Describe your work if not mentioned above :</label>
-                            <input type="text" name="above" id="above">
-                        </div>
-                        <!-- <div class="form-group">
-                            <label for="pincode">Pincode :</label>
-                            <input type="text" name="pincode" id="pincode">
-                        </div> -->
-
+                      
                         <div class="form-group">
                             <label for="state">Payment Mode :</label>
                             <div class="form-select">
@@ -185,8 +167,9 @@
                             </div>
                         </div>
 
-                        <div class="form-group" id="momo">
+                        <div class="form-group" id="momo" hidden="">
                             <label for="course" >For MoMo : Pay it to (054 544 6826) Fredrick Ankamah Twene</label>
+                            <label for="course" style="color: red;" >Note : State your card type(s) as reference</label>
                         </div>
                         <div class="form-group" id="estimatedCost" hidden="">
                             <label for="number">Estimated Cost :</label>

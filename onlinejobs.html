@@ -80,7 +80,6 @@
 
         </div>
     </nav>
-
     <div class="main">
         <div class="container">
             <div class="signup-content">
@@ -89,14 +88,14 @@
                 </div>
                 <div class="signup-form">
                     <form method="POST" class="register-form" id="register-form">
-                        <h2>Get your passport</h2>
-                        <!-- <a href="delivery.html" style="font-size: 15px;  padding: 5px">Delivery</a>
+                        <h2>Adwinpa business - Online job application</h2>
+                        <a href="delivery.html" style="font-size: 15px;  padding: 5px">Delivery</a>
                         <a href="results-buycardOnly.html" style="font-size: 15px;  padding: 5px">Buy Card Only</a>
                         <a href="buycardcheckresults.html" style="font-size: 15px;  padding: 5px">Check results</a>
                         <a href="passport.html" style="font-size: 15px; padding: 5px">passport</a>
                         <a href="birthcert.html" style="font-size: 15px; padding: 5px">Birth cert</a>
                         <a href="university.html" style="font-size: 15px; padding: 5px">University</a>
-                        <a href="onlinejobs.html" style="font-size: 15px; padding: 5px">job</a> -->
+                        <a href="onlinejobs.html" style="font-size: 15px; padding: 5px">job</a>
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">Name :</label>
@@ -117,56 +116,41 @@
                             <input type="text" name="address" id="address" required/>
                         </div>
 
-                        <div class="form-group">
-                            <label for="state">What type of passport do you want ? :</label>
-                            <div class="form-select">
-                                <select name="cbw" id="" onchange="disableColorOrBW(this)">
-                                    <option value=""></option>
-                                    <option value= 1 >New</option>
-                                    <option value= 2 >Renewal</option>
-                                </select>
-                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
-                            </div>
-                        </div>
+                        
 
                         <div class="form-group" id="colordiv" type="hidden">
-                            <label>When do you want your new passport ? :</label>
+                            <label>Which kind of job do you want to apply ? :</label>
                             <div class="form-select">
-                                <select name="color" id="color" disabled="" onchange="EveryResults(this.value)">
+                                <select name="color" id="color" onchange="EveryResults(this.value)">
                                     <option value=""></option>
-                                    <option value= 50 >In one month </option>
-                                    <option value= 20 >In two months</option>
-                                    <option value= 20>In three months</option>
-                                    <option value= 20>In five months</option>
-                                    <option value= 20>In over five months</option>
-                                </select>
-                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
-                            </div>
-                        </div>
-                        <div class="form-group" id="blacknwhitediv">
-                            <label>When do you want your passport renewed ? :</label>
-                            <div class="form-select">
-                                <select name="blacknwhite" id="blacknwhite" disabled="" onchange="EveryResults(this.value)" >
-                                    <option value=""></option>
-                                    <option value= 50 >In one month </option>
-                                    <option value= 20 >In two months</option>
-                                    <option value= 20 >In three months</option>
-                                    <option value= 20 >In five months</option>
-                                    <option value= 20 >In over five months</option>
+                                    <option value= 50 >Immigration </option>
+                                    <option value= 20 >Police</option>
+                                    <option value= 20>Army</option>
+                                    <option value= 20>Fire service</option>
+                                    <option value= 20>Prisons service</option>
+                                    <option value= 20>Ambulance service</option>
+                                    <option value= 20>Local government</option>
+                                    <option value= 20>GES</option>
                                 </select>
                                 <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
                             </div>
                         </div>
 
+                        <!-- <div class="form-group">
+                            <label for="address">Enter the serial number and Pin if you've bought the form already.</label>
+                            <input type="text" name="address" id="address" required/>
+                        </div> -->
+                       
+
                         <div class="form-group">
-                            <label for="address">Upload you birth Certificate :</label>
+                            <label for="address">Upload the serial number and Pin if you've bought the form already :</label>
                             <input type="file" name="file" id="file" required/>
                         </div>
 
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label for="birth_date">Describe your work if not mentioned above :</label>
                             <input type="text" name="above" id="above">
-                        </div>
+                        </div> -->
                         <!-- <div class="form-group">
                             <label for="pincode">Pincode :</label>
                             <input type="text" name="pincode" id="pincode">

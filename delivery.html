@@ -75,12 +75,12 @@
             </div>
 
             <div class="d-none d-lg-block">
-                <button type="button" class="custom-btn btn btn-danger" data-bs-toggle="modal" data-bs-target="#BookingModal">Contact Adwinpa</button>
+                <button type="button" class="custom-btn btn btn-danger" data-bs-toggle="modal" data-bs-target="#BookingModal">Delivery Service</button>
             </div>
 
         </div>
     </nav>
-
+    
     <div class="main">
         <div class="container">
             <div class="signup-content">
@@ -89,14 +89,15 @@
                 </div>
                 <div class="signup-form">
                     <form method="POST" class="register-form" id="register-form">
-                        <h2>Get your passport</h2>
-                        <!-- <a href="delivery.html" style="font-size: 15px;  padding: 5px">Delivery</a>
+                        <h2>Deliver to me</h2>
+                        <h3>Note: Service available on WEDNESDAYS and SATURDAYS only </h3>
+                        <!-- <a href="index.html" style="font-size: 15px;">pick it up</a>
+                        <a href="delivery.html" style="font-size: 15px;  padding: 5px">Delivery</a>
                         <a href="results-buycardOnly.html" style="font-size: 15px;  padding: 5px">Buy Card Only</a>
                         <a href="buycardcheckresults.html" style="font-size: 15px;  padding: 5px">Check results</a>
                         <a href="passport.html" style="font-size: 15px; padding: 5px">passport</a>
                         <a href="birthcert.html" style="font-size: 15px; padding: 5px">Birth cert</a>
-                        <a href="university.html" style="font-size: 15px; padding: 5px">University</a>
-                        <a href="onlinejobs.html" style="font-size: 15px; padding: 5px">job</a> -->
+                        <a href="university.html" style="font-size: 15px; padding: 5px">University</a> -->
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">Name :</label>
@@ -118,49 +119,141 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="state">What type of passport do you want ? :</label>
+                            <label for="state">Colored Or Black & White ? :</label>
                             <div class="form-select">
                                 <select name="cbw" id="" onchange="disableColorOrBW(this)">
                                     <option value=""></option>
-                                    <option value= 1 >New</option>
-                                    <option value= 2 >Renewal</option>
+                                    <option value= 1 >Colored</option>
+                                    <option value= 2 >Black and White</option>
                                 </select>
                                 <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
                             </div>
                         </div>
 
                         <div class="form-group" id="colordiv" type="hidden">
-                            <label>When do you want your new passport ? :</label>
+                            <label>Colored ? :</label>
                             <div class="form-select">
                                 <select name="color" id="color" disabled="" onchange="EveryResults(this.value)">
                                     <option value=""></option>
-                                    <option value= 50 >In one month </option>
-                                    <option value= 20 >In two months</option>
-                                    <option value= 20>In three months</option>
-                                    <option value= 20>In five months</option>
-                                    <option value= 20>In over five months</option>
+                                    <option value= 2 >Colored (A4)</option>
+                                    <option value= 7 >Colored (Pictures)</option>
+                                    
                                 </select>
                                 <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
                             </div>
                         </div>
                         <div class="form-group" id="blacknwhitediv">
-                            <label>When do you want your passport renewed ? :</label>
+                            <label>Black & White ? :</label>
                             <div class="form-select">
                                 <select name="blacknwhite" id="blacknwhite" disabled="" onchange="EveryResults(this.value)" >
                                     <option value=""></option>
-                                    <option value= 50 >In one month </option>
-                                    <option value= 20 >In two months</option>
-                                    <option value= 20 >In three months</option>
-                                    <option value= 20 >In five months</option>
-                                    <option value= 20 >In over five months</option>
+                                    <option value= 1 >Black & White (A4)</option>
+                                    <option value= 2 >Black & White (A3)</option>
                                 </select>
                                 <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="address">Upload you birth Certificate :</label>
+                            <label for="address">Upload file :</label>
                             <input type="file" name="file" id="file" required/>
+                        </div>
+
+                        
+                        <div class="form-group">
+                            <label for="state">How many copies ? :</label>
+                            <div class="form-select">
+                                <select name="copies" id="copies" onchange="submitOutFunc(this.value); disableEnabled(this)">
+                                    <option value=""></option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                </select>
+                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="state">When do you want it delivered ? :</label>
+                            <div class="form-select" required>
+                                <select name="pickup" id="pickup">
+                                    <option value=""></option>
+                                    <option value="In 15mins">In 30mins</option>
+                                    <option value="In 30mins">In 1hr</option>
+                                    <option value="In 1hr">In 2hr</option>
+                                    <option value="In 5hrs">In 5hrs</option>
+                                    <option value="Next day">Next day</option>
+                                </select>
+                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="state">Where are you located ? :</label>
+                            <div class="form-select" required>
+                                <select name="deliver" id="deliver" onchange="submitOutFunc(this.value)">
+                                    <option value=""></option>
+                                    <option value="3">American Farm</option>
+                                    <option value="6">Nsuonano</option>
+                                    <option value="5">Assemblies</option>
+                                    <option value="5">Top Town</option>
+                                    <option value="3">50-50</option>
+                                    <option value="8">Peace Town</option>
+                                    <option value="6">Free Town</option>
+                                    <option value="6">Atsia</option>
+                                </select>
+                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address">Describe the nearest landmark for delivery :</label>
+                            <input type="describe" name="describe" id="describe" placeholder="eg: opposite elder Duah Drug Store or 4th house on th 1st street opposite the entrance of the American Farm shopping mall" required/>
+                        </div>
+
+                        <div class="form-group" id="laminationDiv" hidden="">
+                            <label for="state">Do you want Lamination ?  :</label>
+                            <div class="form-select">
+                                <select name="lamination" id="lamination" onchange="submitOutFunc(this.value)">
+                                    <option value=""></option>
+                                    <option value="5">Yes</option>
+                                    <option value="0">No</option>
+                                </select>
+                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group" id="envelopeDiv" hidden="">
+                            <label for="state">Do you want Envelope ?  :</label>
+                            <div class="form-select">
+                                <select name="envelope" id="envelope" onchange="submitOutFunc(this.value)">
+                                    <option value=""></option>
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                                </select>
+                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group" id="bindingDiv" hidden="">
+                            <label for="state">Do you want Binding ?  :</label>
+                            <div class="form-select">
+                                <select name="binding" id="binding" onchange="submitOutFunc(this.value)">
+                                    <option value=""></option>
+                                    <option value="5">Yes</option>
+                                    <option value="0">No</option>
+                                </select>
+                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                            </div>
                         </div>
 
                         <div class="form-group">

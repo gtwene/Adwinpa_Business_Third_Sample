@@ -75,22 +75,24 @@
             </div>
 
             <div class="d-none d-lg-block">
-                <button type="button" class="custom-btn btn btn-danger" data-bs-toggle="modal" data-bs-target="#BookingModal">Contact Adwinpa</button>
+                <button type="button" class="custom-btn btn btn-danger" data-bs-toggle="modal" data-bs-target="#BookingModal">Delivery Service</button>
             </div>
 
         </div>
     </nav>
-
+    
     <div class="main">
         <div class="container">
             <div class="signup-content">
                 <div class="signup-img">
-                    <img src="https://i0.wp.com/www.alphr.com/wp-content/uploads/2020/11/pixabay-printer-1910685_1280.png?ssl=1" style="height: 600px; width: 700px" alt="">
+                    <img src="images/WAEC.jpg" style="height: 600px; width: 700px" alt="">
                 </div>
                 <div class="signup-form">
                     <form method="POST" class="register-form" id="register-form">
-                        <h2>Get your passport</h2>
-                        <!-- <a href="delivery.html" style="font-size: 15px;  padding: 5px">Delivery</a>
+                        <h2>Buy card and check results</h2>
+                        <h3>Note: Service available on WEDNESDAYS and SATURDAYS only </h3>
+                        <!-- <a href="index.html" style="font-size: 15px;">pick it up</a>
+                        <a href="delivery.html" style="font-size: 15px;  padding: 5px">Delivery</a>
                         <a href="results-buycardOnly.html" style="font-size: 15px;  padding: 5px">Buy Card Only</a>
                         <a href="buycardcheckresults.html" style="font-size: 15px;  padding: 5px">Check results</a>
                         <a href="passport.html" style="font-size: 15px; padding: 5px">passport</a>
@@ -118,54 +120,139 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="state">What type of passport do you want ? :</label>
-                            <div class="form-select">
-                                <select name="cbw" id="" onchange="disableColorOrBW(this)">
+                            <label for="state">what type of card do you want to buy ? :</label>
+                            <div class="form-select" required>
+                                <select name="typeOfCardDo" id="typeOfCardDo" onchange="typeofCard(this.value); buyCardCheckResults(this.value)">
                                     <option value=""></option>
-                                    <option value= 1 >New</option>
-                                    <option value= 2 >Renewal</option>
-                                </select>
-                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
-                            </div>
-                        </div>
-
-                        <div class="form-group" id="colordiv" type="hidden">
-                            <label>When do you want your new passport ? :</label>
-                            <div class="form-select">
-                                <select name="color" id="color" disabled="" onchange="EveryResults(this.value)">
-                                    <option value=""></option>
-                                    <option value= 50 >In one month </option>
-                                    <option value= 20 >In two months</option>
-                                    <option value= 20>In three months</option>
-                                    <option value= 20>In five months</option>
-                                    <option value= 20>In over five months</option>
-                                </select>
-                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
-                            </div>
-                        </div>
-                        <div class="form-group" id="blacknwhitediv">
-                            <label>When do you want your passport renewed ? :</label>
-                            <div class="form-select">
-                                <select name="blacknwhite" id="blacknwhite" disabled="" onchange="EveryResults(this.value)" >
-                                    <option value=""></option>
-                                    <option value= 50 >In one month </option>
-                                    <option value= 20 >In two months</option>
-                                    <option value= 20 >In three months</option>
-                                    <option value= 20 >In five months</option>
-                                    <option value= 20 >In over five months</option>
+                                    <option value="16">BECE result checker</option>
+                                    <option value="16">WASSCE result checker</option>
+                                    <option value="16">NOV-DEC result checker</option>
+                                    <option value="16">School placement card</option>
                                 </select>
                                 <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="address">Upload you birth Certificate :</label>
-                            <input type="file" name="file" id="file" required/>
+                            <label for="state">How do you want to get the results ? :</label>
+                            <div class="form-select">
+                                <select name="howtogetResults" id="howtogetResults" onchange="results_delivery(this)">
+                                    <option value=""></option>
+                                    <option value= 1 >Send to my email address</option>
+                                    <option value= 3 >Print for me to pick it up</option>
+                                    <option value= 3 >Print and deliver to me</option>
+                                </select>
+                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group" id="statemail" hidden="">
+                            <label>State your email ? :</label>
+                            <div class="form-select">
+                                <input type="text" name="address" id="color" required/>
+                            </div>
+                        </div>
+                        <div class="form-group" id="printOut" hidden="">
+                            <label>Print Out :</label>
+                            <div class="form-select">
+                                <select name="blacknwhite" id="blacknwhite" onchange="EveryResults(this.value); buyCardCheckResults(this.value)" >
+                                    <option value=""></option>
+                                    <option value= 1 >Black & White (A4)</option>
+                                    <!-- <option value= 2 >Black & White (A3)</option> -->
+                                </select>
+                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                            </div>
+                        </div>
+
+                        
+                        <div class="form-group" id="quantity" hidden="">
+                            <label for="state">How many copies ? :</label>
+                            <div class="form-select">
+                                <select name="copiesCardCheck" id="copiesCardCheck" onchange="buyCardCheckResults(this.value)">
+                                    <option value=""></option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                </select>
+                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group" id="timeP" hidden="">
+                            <label for="state">When do you want pick it up ? :</label>
+                            <div class="form-select" required>
+                                <select name="pickup" id="pickup">
+                                    <option value=""></option>
+                                    <option value="In 15mins">In 30mins</option>
+                                    <option value="In 30mins">In 1hr</option>
+                                    <option value="In 1hr">In 2hr</option>
+                                    <option value="In 5hrs">In 5hrs</option>
+                                    <option value="Next day">Next day</option>
+                                </select>
+                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group" id="delivertime" hidden="">
+                            <label for="state">When do you want to get it delivered ? :</label>
+                            <div class="form-select" required>
+                                <select name="pickup" id="pickup">
+                                    <option value=""></option>
+                                    <option value="In 15mins">In 30mins</option>
+                                    <option value="In 30mins">In 1hr</option>
+                                    <option value="In 1hr">In 2hr</option>
+                                    <option value="In 5hrs">In 5hrs</option>
+                                    <option value="Next day">Next day</option>
+                                </select>
+                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group" id="location" hidden="">
+                            <label for="state">Where are you located ? :</label>
+                            <div class="form-select" required>
+                                <select name="deliver" id="deliver" onchange="buyCardCheckResults(this.value)">
+                                    <option value="">I will pick it up myself</option>
+                                    <option value="3">American Farm</option>
+                                    <option value="6">Nsuonano</option>
+                                    <option value="5">Assemblies</option>
+                                    <option value="5">Top Town</option>
+                                    <option value="3">50-50</option>
+                                    <option value="8">Peace Town</option>
+                                    <option value="6">Free Town</option>
+                                    <option value="6">Atsia</option>
+                                </select>
+                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group" hidden="">
+                            <label for="address">Describe th nearest landmark for delivery :</label>
+                            <input type="describe" name="describe" id="describe" placeholder="eg: opposite elder Duah Drug Store or 4th house on th 1st street opposite the entrance of the American Farm shopping mall" required/>
                         </div>
 
                         <div class="form-group">
-                            <label for="birth_date">Describe your work if not mentioned above :</label>
-                            <input type="text" name="above" id="above">
+                            <label for="birth_date">What is your index number :</label>
+                            <input type="text" name="index" id="index">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="birth_date">What is your date of birth :</label>
+                            <input type="date" name="date" id="date">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="birth_date">What year did you write the exams :</label>
+                            <input type="text" name="exams" id="exams">
                         </div>
                         <!-- <div class="form-group">
                             <label for="pincode">Pincode :</label>
