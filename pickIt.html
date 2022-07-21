@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -88,7 +90,7 @@
                     <img src="https://i0.wp.com/www.alphr.com/wp-content/uploads/2020/11/pixabay-printer-1910685_1280.png?ssl=1" style="height: 600px; width: 700px" alt="">
                 </div>
                 <div class="signup-form">
-                    <form method="POST" class="register-form" id="register-form">
+                    <form method="POST" action="connection.php" class="register-form" id="register-form">
                         <h3 style="font-size: 25px; font-weight: bold; padding-bottom: 20px;">Print for me to pick it up</h3>
                        
                         <div class="form-row">
@@ -114,7 +116,7 @@
                         <div class="form-group">
                             <label for="state">Colored Or Black & White ? :</label>
                             <div class="form-select">
-                                <select name="cbw" id="" onchange="disableColorOrBW(this)">
+                                <select name="cbw" id="coloredBlackWhite" onchange="disableColorOrBW(this)">
                                     <option value=""></option>
                                     <option value= 1 >Colored</option>
                                     <option value= 2 >Black and White</option>
@@ -286,9 +288,11 @@
     </div>
 
     <!-- JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/databaseConfig.js" type="module"></script>
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>

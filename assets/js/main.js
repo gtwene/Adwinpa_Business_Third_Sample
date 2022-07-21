@@ -153,16 +153,16 @@ function submitOutFunc() {
   }
 }
 
-(function ($) {
-  $("#submit").on("click", function () {
-    Swal.fire({
-      position: "center",
-      icon: "success",
-      title: "Adwinpa Business",
-      showConfirmButton: false,
-      timer: 2500,
-    });
+// (function ($) {
+//   $("#submit").on("click", function () {
+//     Swal.fire({
+//       position: "center",
+//       icon: "success",
+//       title: "Adwinpa Business",
+//       showConfirmButton: false,
+//       timer: 2500,
+//     });
 
-    return false;
-  });
-})(jQuery);
+//     return false;
+//   });
+// })(jQuery);
