@@ -18,7 +18,7 @@ function enableMomo(val) {
 
 // Disabling and Enabling
 function disableEnabled(val) {
-  console.log(val.value);
+  // console.log(val.value);
   const code = val.value;
   if (code) {
     document.getElementById("laminationDiv").hidden = false;
@@ -51,7 +51,7 @@ function results_delivery(results) {
 }
 
 function disableColorOrBW(val) {
-  console.log(val.value);
+  // console.log(val.value);
   if (val.value == 1) {
     document.getElementById("color").disabled = false;
     document.getElementById("blacknwhitediv").hidden = true;
@@ -84,7 +84,7 @@ const typeofCard = (val) => {
 
 const EveryResults = (results) => {
   var bin = results;
-  console.log(bin);
+  // console.log(bin);
   document.getElementById("tot_cost").value = `GHS ${bin}`;
 };
 
@@ -114,55 +114,93 @@ const buyCardCheckResults = (val) => {
 };
 
 function submitOutFunc() {
-  var name = document.getElementById("name").value;
-  var contactno = document.getElementById("contactno").value;
-  var address = document.getElementById("address").value;
-  var above = document.getElementById("above").value;
-  // Select Fields
-  var color = document.getElementById("color").value;
-  var blacknwhite = document.getElementById("blacknwhite").value;
   var copies = document.getElementById("copies").value;
-  var pickup = document.getElementById("pickup").value;
+  var color = document.getElementById("color").value;
   var lamination = document.getElementById("lamination").value;
   var envelope = document.getElementById("envelope").value;
   var binding = document.getElementById("binding").value;
   var payment = document.getElementById("payment").value;
   var deliver = document.getElementById("deliver").value;
-  var copiesCardCheck = document.getElementById("copiesCardCheck").value;
-  // console.log(name);
-  // console.log(contactno)
+  var blacknwhite = document.getElementById("blacknwhite").value;
+  var pickup = document.getElementById("pickup").value;
+  var coloredBlackWhite = document.getElementById("coloredBlackWhite").value;
 
-  if (color) {
-    const AddCost =
-      color * copies +
+  var est_cost =
+    blacknwhite * Number(copies) +
+    Number(deliver) +
+    Number(lamination) +
+    Number(envelope) +
+    Number(binding);
+
+  document.getElementById("tot_cost").value = `GHS ${est_cost}`;
+
+  var est_cost =
+    Number(color) * Number(copies) +
+    Number(lamination) +
+    Number(envelope) +
+    Number(binding) +
+    Number(deliver);
+  document.getElementById("tot_cost").value = `GHS ${est_cost}`;
+
+  console.log(
+    blacknwhite * Number(copies) +
       Number(lamination) +
       Number(envelope) +
       Number(binding) +
-      Number(deliver);
-    console.log(AddCost);
-    document.getElementById("tot_cost").value = `GHS ${AddCost}`;
-  } else if (blacknwhite) {
-    const AddCost =
-      blacknwhite * copies +
+      Number(deliver)
+  );
+
+  console.log(
+    Number(color) * Number(copies) +
       Number(lamination) +
       Number(envelope) +
       Number(binding) +
-      Number(copiesCardCheck) +
-      Number(deliver);
-    document.getElementById("tot_cost").value = `GHS ${AddCost}`;
-  }
+      Number(deliver)
+  );
+
+  // var name = document.getElementById("name").value;
+  // var contactno = document.getElementById("contactno").value;
+  // var address = document.getElementById("address").value;
+  // var above = document.getElementById("above").value;
+  // // Select Fields
+
+  // var copiesCardCheck = document.getElementById("copiesCardCheck").value;
+  // console.log(name);
+  // console.log(contactno);
+  //   if (color) {
+  //     const AddCost =
+  //       color * copies +
+  //       Number(lamination) +
+  //       Number(envelope) +
+  //       Number(binding) +
+  //       Number(deliver);
+  //     console.log(AddCost);
+  //     document.getElementById("tot_cost").value = `GHS ${AddCost}`;
+  //   } else if (blacknwhite) {
+  //     const AddCost =
+  //       blacknwhite * copies +
+  //       Number(lamination) +
+  //       Number(envelope) +
+  //       Number(binding) +
+  //       Number(copiesCardCheck) +
+  //       Number(deliver);
+  //     document.getElementById("tot_cost").value = `GHS ${AddCost}`;
+  //   } else {
+  //     return null;
+  //   }
 }
 
-// (function ($) {
-//   $("#submit").on("click", function () {
-//     Swal.fire({
-//       position: "center",
-//       icon: "success",
-//       title: "Adwinpa Business",
-//       showConfirmButton: false,
-//       timer: 2500,
-//     });
+(function ($) {
+  $("#submit").on("click", function () {
+    submitOutFunc();
+    //     Swal.fire({
+    //       position: "center",
+    //       icon: "success",
+    //       title: "Adwinpa Business",
+    //       showConfirmButton: false,
+    //       timer: 2500,
+    //     });
 
-//     return false;
-//   });
-// })(jQuery);
+    //     return false;
+  });
+})(jQuery);

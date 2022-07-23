@@ -128,7 +128,7 @@
                         <div class="form-group" id="colordiv" type="hidden">
                             <label>Colored ? :</label>
                             <div class="form-select">
-                                <select name="color" id="color" disabled="" onchange="EveryResults(this.value)">
+                                <select name="color" id="color" disabled="" onchange="submitOutFunc()">
                                     <option value=""></option>
                                     <option value= 2 >Colored (A4)</option>
                                     <option value= 7 >Colored (Pictures)</option>
@@ -140,7 +140,7 @@
                         <div class="form-group" id="blacknwhitediv">
                             <label>Black & White ? :</label>
                             <div class="form-select">
-                                <select name="blacknwhite" id="blacknwhite" disabled="" onchange="EveryResults(this.value)" >
+                                <select name="blacknwhite" id="blacknwhite" disabled="" onchange="submitOutFunc()" >
                                     <option value=""></option>
                                     <option value= 1 >Black & White (A4)</option>
                                     <option value= 2 >Black & White (A3)</option>
@@ -158,8 +158,8 @@
                         <div class="form-group">
                             <label for="state">How many copies ? :</label>
                             <div class="form-select">
-                                <select name="copies" id="copies" onchange="submitOutFunc(this.value); disableEnabled(this)">
-                                    <option value=""></option>
+                                <select name="copies" id="copies" onchange="submitOutFunc(); disableEnabled(this); ">
+                                    <option></option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -195,7 +195,7 @@
                         <div class="form-group" hidden>
                             <label for="state">Where are you located ? :</label>
                             <div class="form-select" required>
-                                <select name="deliver" id="deliver" onchange="submitOutFunc(this.value)">
+                                <select name="deliver" id="deliver" onchange="EveryResults(this.value)">
                                     <option value=""></option>
                                     <option value="3">American Farm</option>
                                     <option value="6">Nsuonano</option>
@@ -214,7 +214,7 @@
                         <div class="form-group" id="laminationDiv" hidden="">
                             <label for="state">Do you want Lamination ?  :</label>
                             <div class="form-select">
-                                <select name="lamination" id="lamination" onchange="submitOutFunc(this.value)">
+                                <select name="lamination" id="lamination" onchange="submitOutFunc()">
                                     <option value=""></option>
                                     <option value="5">Yes</option>
                                     <option value="0">No</option>
@@ -226,7 +226,7 @@
                         <div class="form-group" id="envelopeDiv" hidden="">
                             <label for="state">Do you want Envelope ?  :</label>
                             <div class="form-select">
-                                <select name="envelope" id="envelope" onchange="submitOutFunc(this.value)">
+                                <select name="envelope" id="envelope" onchange="submitOutFunc()">
                                     <option value=""></option>
                                     <option value="1">Yes</option>
                                     <option value="0">No</option>
@@ -238,7 +238,7 @@
                         <div class="form-group" id="bindingDiv" hidden="">
                             <label for="state">Do you want Binding ?  :</label>
                             <div class="form-select">
-                                <select name="binding" id="binding" onchange="submitOutFunc(this.value)">
+                                <select name="binding" id="binding" onchange="submitOutFunc()">
                                     <option value=""></option>
                                     <option value="5">Yes</option>
                                     <option value="0">No</option>

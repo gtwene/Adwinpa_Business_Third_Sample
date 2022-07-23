@@ -121,7 +121,7 @@
                         <div class="form-group">
                             <label for="state">Colored Or Black & White ? :</label>
                             <div class="form-select">
-                                <select name="cbw" id="" onchange="disableColorOrBW(this)">
+                                <select name="cbw" id="coloredBlackWhite" onchange="disableColorOrBW(this)">
                                     <option value=""></option>
                                     <option value= 1 >Colored</option>
                                     <option value= 2 >Black and White</option>
@@ -133,7 +133,7 @@
                         <div class="form-group" id="colordiv" type="hidden">
                             <label>Colored ? :</label>
                             <div class="form-select">
-                                <select name="color" id="color" disabled="" onchange="EveryResults(this.value)">
+                                <select name="color" id="color" disabled="" onchange="submitOutFunc()">
                                     <option value=""></option>
                                     <option value= 2 >Colored (A4)</option>
                                     <option value= 7 >Colored (Pictures)</option>
@@ -145,7 +145,7 @@
                         <div class="form-group" id="blacknwhitediv">
                             <label>Black & White ? :</label>
                             <div class="form-select">
-                                <select name="blacknwhite" id="blacknwhite" disabled="" onchange="EveryResults(this.value)" >
+                                <select name="blacknwhite" id="blacknwhite" disabled="" onchange="submitOutFunc()" >
                                     <option value=""></option>
                                     <option value= 1 >Black & White (A4)</option>
                                     <option value= 2 >Black & White (A3)</option>
@@ -163,8 +163,8 @@
                         <div class="form-group">
                             <label for="state">How many copies ? :</label>
                             <div class="form-select">
-                                <select name="copies" id="copies" onchange="submitOutFunc(this.value); disableEnabled(this)">
-                                    <option value=""></option>
+                                <select name="copies" id="copies" onchange="submitOutFunc(); disableEnabled(this); ">
+                                    <option></option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -183,7 +183,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="state">When do you want it delivered ? :</label>
+                            <label for="state">When do you want it delivered? :</label>
                             <div class="form-select" required>
                                 <select name="pickup" id="pickup">
                                     <option value=""></option>
@@ -200,7 +200,7 @@
                         <div class="form-group">
                             <label for="state">Where are you located ? :</label>
                             <div class="form-select" required>
-                                <select name="deliver" id="deliver" onchange="submitOutFunc(this.value)">
+                                <select name="deliver" id="deliver" onchange="submitOutFunc()">
                                     <option value=""></option>
                                     <option value="3">American Farm</option>
                                     <option value="6">Nsuonano</option>
@@ -215,15 +215,11 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="address">Describe the nearest landmark for delivery :</label>
-                            <input type="describe" name="describe" id="describe" placeholder="eg: opposite elder Duah Drug Store or 4th house on th 1st street opposite the entrance of the American Farm shopping mall" required/>
-                        </div>
 
                         <div class="form-group" id="laminationDiv" hidden="">
                             <label for="state">Do you want Lamination ?  :</label>
                             <div class="form-select">
-                                <select name="lamination" id="lamination" onchange="submitOutFunc(this.value)">
+                                <select name="lamination" id="lamination" onchange="submitOutFunc()">
                                     <option value=""></option>
                                     <option value="5">Yes</option>
                                     <option value="0">No</option>
@@ -235,7 +231,7 @@
                         <div class="form-group" id="envelopeDiv" hidden="">
                             <label for="state">Do you want Envelope ?  :</label>
                             <div class="form-select">
-                                <select name="envelope" id="envelope" onchange="submitOutFunc(this.value)">
+                                <select name="envelope" id="envelope" onchange="submitOutFunc()">
                                     <option value=""></option>
                                     <option value="1">Yes</option>
                                     <option value="0">No</option>
@@ -247,7 +243,7 @@
                         <div class="form-group" id="bindingDiv" hidden="">
                             <label for="state">Do you want Binding ?  :</label>
                             <div class="form-select">
-                                <select name="binding" id="binding" onchange="submitOutFunc(this.value)">
+                                <select name="binding" id="binding" onchange="submitOutFunc()">
                                     <option value=""></option>
                                     <option value="5">Yes</option>
                                     <option value="0">No</option>
@@ -278,7 +274,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group" id="momo">
+                        <div class="form-group" id="momo" hidden>
                             <label for="course" >For MoMo : Pay it to (054 544 6826) Fredrick Ankamah Twene</label>
                         </div>
                         <div class="form-group" id="estimatedCost" hidden="">
@@ -297,9 +293,11 @@
     </div>
 
     <!-- JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./assets/js/main.js"></script>
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+    <script src="./assets/js/databaseConfig.js" type="module"></script>
+</body>
 </html>
