@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Adwinpa Business</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="./assets/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    
+ <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+
+ <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
+
+ <link rel="stylesheet" href="assets/css/templatemo-lava.css">
+
+ <link rel="stylesheet" href="assets/css/owl-carousel.css">
+
+
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">                  
+
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+
+        <link href="assets/css/bootstrap-icons.css" rel="stylesheet">
+
+        <link href="assets/css/tooplate-crispy-kitchen.css" rel="stylesheet">
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-white shadow-lg">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/Logo.jpg" style="width: 120px; height: 70px;" alt="">
+            </a>
+
+            <!-- <div class="d-lg-none">
+                <button type="button" class="custom-btn btn btn-danger" data-bs-toggle="modal" data-bs-target="#BookingModal">Contact Adwinpa</button>
+            </div> -->
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Adwinpa</a>
+                    </li>
+
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="about.html">Story</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="menu.html">Menu</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="news.html">Our Updates</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li> -->
+                </ul>
+            </div>
+
+            <!-- <div class="d-none d-lg-block">
+                <button type="button" class="custom-btn btn btn-danger" data-bs-toggle="modal" data-bs-target="#BookingModal">Delivery Service</button>
+            </div> -->
+
+        </div>
+    </nav>
+
+    <div class="main">
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-img">
+                    <img src="https://i0.wp.com/www.alphr.com/wp-content/uploads/2020/11/pixabay-printer-1910685_1280.png?ssl=1" style="height: 600px; width: 700px" alt="">
+                </div>
+                <div class="signup-form">
+                    <form class="register-form" id="register-form">
+                        <h2 style="font-size: 15px; font-weight: bold;">Deliver to me</h2>
+                        <h3 style="font-size: 12px; font-weight: bold; color: red; padding-bottom: 20px;">Note: Service available on WEDNESDAYS and SATURDAYS only </h3>
+                        <!-- <a href="index.html" style="font-size: 15px;">pick it up</a>
+                        <a href="delivery.html" style="font-size: 15px;  padding: 5px">Delivery</a>
+                        <a href="results-buycardOnly.html" style="font-size: 15px;  padding: 5px">Buy Card Only</a>
+                        <a href="buycardcheckresults.html" style="font-size: 15px;  padding: 5px">Check results</a>
+                        <a href="passport.html" style="font-size: 15px; padding: 5px">passport</a>
+                        <a href="birthcert.html" style="font-size: 15px; padding: 5px">Birth cert</a>
+                        <a href="university.html" style="font-size: 15px; padding: 5px">University</a> -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Name :</label>
+                                <input type="text" name="name" id="name" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactno">Contact No :</label>
+                                <input type="phone" name="contactno" id="contactno" required/>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address">Email Address :</label>
+                            <input type="text" name="email" id="address" required/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="state">Colored Or Black & White ? :</label>
+                            <div class="form-select">
+                                <select name="coloredBlackWhite" id="coloredBlackWhite" onchange="disableColorOrBW(this)">
+                                    <option value=""></option>
+                                    <option value= "colored" >Colored</option>
+                                    <option value= "black and white" >Black and White</option>
+                                </select>
+                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group" id="colordiv" type="hidden">
+                            <label>Colored ? :</label>
+                            <div class="form-select">
+                                <select name="color" id="color" disabled="" onchange="submitOutFunc()">
+                                    <option value=""></option>
+                                    <option value= 2 >Colored (A4)</option>
+                                    <option value= 7 >Colored (Pictures)</option>
+                                    
+                                </select>
+                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                            </div>
+                        </div>
+                        <div class="form-group" id="blacknwhitediv">
+                            <label>Black & White ? :</label>
+                            <div class="form-select">
+                                <select name="blacknwhite" id="blacknwhite" disabled="" onchange="submitOutFunc()" >
+                                    <option value=""></option>
+                                    <option value= 1 >Black & White (A4)</option>
+                                    <option value= 2 >Black & White (A3)</option>
+                                </select>
+                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address">Upload file :</label>
+                            <input type="file" name="file" id="file" required/>
+                        </div>
+
+                        
+                        <div class="form-group">
+                            <label for="state">How many copies ? :</label>
+                            <div class="form-select">
+                                <select name="copies" id="copies" onchange="submitOutFunc(); disableEnabled(this); ">
+                                    <option></option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                </select>
+                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="state">When do you want it delivered? :</label>
+                            <div class="form-select" required>
+                                <select name="pickup" id="pickup">
+                                    <option value=""></option>
+                                    <option value="In 15mins">In 30mins</option>
+                                    <option value="In 30mins">In 1hr</option>
+                                    <option value="In 1hr">In 2hr</option>
+                                    <option value="In 5hrs">In 5hrs</option>
+                                    <option value="Next day">Next day</option>
+                                </select>
+                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="state">Where are you located ? :</label>
+                            <div class="form-select" required>
+                                <select name="deliver" id="deliver" onchange="submitOutFunc()">
+                                    <option value=""></option>
+                                    <option value="3">American Farm</option>
+                                    <option value="6">Nsuonano</option>
+                                    <option value="5">Assemblies</option>
+                                    <option value="5">Top Town</option>
+                                    <option value="3">50-50</option>
+                                    <option value="8">Peace Town</option>
+                                    <option value="6">Free Town</option>
+                                    <option value="6">Atsia</option>
+                                </select>
+                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group" id="laminationDiv" hidden="">
+                            <label for="state">Do you want Lamination ?  :</label>
+                            <div class="form-select">
+                                <select name="lamination" id="lamination" onchange="submitOutFunc()">
+                                    <option value=""></option>
+                                    <option value="5">Yes</option>
+                                    <option value="0">No</option>
+                                </select>
+                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group" id="envelopeDiv" hidden="">
+                            <label for="state">Do you want Envelope ?  :</label>
+                            <div class="form-select">
+                                <select name="envelope" id="envelope" onchange="submitOutFunc()">
+                                    <option value=""></option>
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                                </select>
+                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group" id="bindingDiv" hidden="">
+                            <label for="state">Do you want Binding ?  :</label>
+                            <div class="form-select">
+                                <select name="binding" id="binding" onchange="submitOutFunc()">
+                                    <option value=""></option>
+                                    <option value="5">Yes</option>
+                                    <option value="0">No</option>
+                                </select>
+                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="birth_date">Describe your work if not mentioned above :</label>
+                            <input type="text" name="above" id="above">
+                        </div>
+                        <!-- <div class="form-group">
+                            <label for="pincode">Pincode :</label>
+                            <input type="text" name="pincode" id="pincode">
+                        </div> -->
+
+                        <div class="form-group">
+                            <label for="state">Payment Mode :</label>
+                            <div class="form-select">
+                                <select name="payment" id="payment" onchange="enableMomo(this)">
+                                    <option value=""></option>
+                                    <option value="1">Cash</option>
+                                    <option value="2">MoMo</option>
+                                    
+                                </select>
+                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group" id="momo" hidden>
+                            <label for="course" >For MoMo : Pay it to (054 544 6826) Fredrick Ankamah Twene</label>
+                        </div>
+                        <div class="form-group" id="estimatedCost" hidden="">
+                            <label for="number">Estimated Cost :</label>
+                            <input type="text" name="cost" id="tot_cost" />
+                        </div>
+                        <div class="form-submit">
+                            <button type="submit" id="submit" style="margin-top: 10px;">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/databaseConfig.js" type="module"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.9.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.9.0/firebase-analytics.js"></script>
+</body>
+</html>
