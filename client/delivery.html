@@ -89,15 +89,9 @@
                 </div>
                 <div class="signup-form">
                     <form class="register-form" id="register-form">
-                        <h2 style="font-size: 15px; font-weight: bold;">Deliver to me</h2>
-                        <h3 style="font-size: 12px; font-weight: bold; color: red; padding-bottom: 20px;">Note: Service available on WEDNESDAYS and SATURDAYS only </h3>
-                        <!-- <a href="index.html" style="font-size: 15px;">pick it up</a>
-                        <a href="delivery.html" style="font-size: 15px;  padding: 5px">Delivery</a>
-                        <a href="results-buycardOnly.html" style="font-size: 15px;  padding: 5px">Buy Card Only</a>
-                        <a href="buycardcheckresults.html" style="font-size: 15px;  padding: 5px">Check results</a>
-                        <a href="passport.html" style="font-size: 15px; padding: 5px">passport</a>
-                        <a href="birthcert.html" style="font-size: 15px; padding: 5px">Birth cert</a>
-                        <a href="university.html" style="font-size: 15px; padding: 5px">University</a> -->
+                        <h2 style="font-size: 25px; font-weight: bold;">Print and Deliver to me</h2>
+                        <h3 style="font-size: 15px; font-weight: bold; color: red; padding-bottom: 20px;">Note: Service available on WEDNESDAYS and SATURDAYS only </h3>
+                        
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">Name :</label>
@@ -131,19 +125,19 @@
                         </div>
 
                         <div class="form-group" id="colordiv" type="hidden">
-                            <label>Colored ? :</label>
+                            <label>Colored :</label>
                             <div class="form-select">
                                 <select name="color" id="color" disabled="" onchange="submitOutFunc()">
                                     <option value=""></option>
-                                    <option value= 2 >Colored (A4)</option>
-                                    <option value= 7 >Colored (Pictures)</option>
-                                    
+                                    <option value= 2 >A4 (plain paper)</option>
+                                    <option value= 5 >Picture (plain paper)</option>
+                                    <option value= 10 >Picture (photopaper)</option>
                                 </select>
                                 <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
                             </div>
                         </div>
                         <div class="form-group" id="blacknwhitediv">
-                            <label>Black & White ? :</label>
+                            <label>Black & White :</label>
                             <div class="form-select">
                                 <select name="blacknwhite" id="blacknwhite" disabled="" onchange="submitOutFunc()" >
                                     <option value=""></option>
@@ -187,10 +181,10 @@
                             <div class="form-select" required>
                                 <select name="pickup" id="pickup">
                                     <option value=""></option>
-                                    <option value="In 15mins">In 30mins</option>
-                                    <option value="In 30mins">In 1hr</option>
-                                    <option value="In 1hr">In 2hr</option>
-                                    <option value="In 5hrs">In 5hrs</option>
+                                    <option value="In 15mins">In 30 minutes</option>
+                                    <option value="In 30mins">In 1 hour</option>
+                                    <option value="In 1hr">In 2 hours</option>
+                                    <option value="In 5hrs">In 5 hours</option>
                                     <option value="Next day">Next day</option>
                                 </select>
                                 <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
@@ -233,7 +227,7 @@
                             <div class="form-select">
                                 <select name="envelope" id="envelope" onchange="submitOutFunc()">
                                     <option value=""></option>
-                                    <option value="1">Yes</option>
+                                    <option value="1.20">Yes</option>
                                     <option value="0">No</option>
                                 </select>
                                 <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>

@@ -126,19 +126,20 @@
                         </div>
 
                         <div class="form-group" id="colordiv" type="hidden">
-                            <label>Colored ? :</label>
+                            <label>Colored :</label>
                             <div class="form-select">
                                 <select name="color" id="color" disabled="" onchange="submitOutFunc()">
                                     <option value=""></option>
-                                    <option value= 2 >Colored (A4)</option>
-                                    <option value= 7 >Colored (Pictures)</option>
-                                    
+                                    <option value= 2 >A4 (plain paper)</option>
+                                    <option value= 5 >Picture (plain paper)</option>
+                                    <option value= 10 >Picture (photopaper)</option>
+                                    <option value= 1.5 >Envelope (DL)</option>
                                 </select>
                                 <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
                             </div>
                         </div>
                         <div class="form-group" id="blacknwhitediv">
-                            <label>Black & White ? :</label>
+                            <label>Black & White :</label>
                             <div class="form-select">
                                 <select name="blacknwhite" id="blacknwhite" disabled="" onchange="submitOutFunc()" >
                                     <option value=""></option>
@@ -151,12 +152,12 @@
 
                         <div class="form-group">
                             <label for="address">Upload file :</label>
-                            <input type="file" name="file" id="file" required/>
+                            <input type="file" name="file" id="file"  accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required/>
                         </div>
 
                         
                         <div class="form-group">
-                            <label for="state">How many copies ? :</label>
+                            <label for="state">How many printouts? :</label>
                             <div class="form-select">
                                 <select name="copies" id="copies" onchange="submitOutFunc(); disableEnabled(this); ">
                                     <option></option>
@@ -178,14 +179,14 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="state">When do you want to pick it up ? :</label>
+                            <label for="state">When do you want to pick it up? :</label>
                             <div class="form-select" required>
                                 <select name="pickuptime" id="pickup">
                                     <option value=""></option>
-                                    <option value="In 15mins">In 30mins</option>
-                                    <option value="In 30mins">In 1hr</option>
-                                    <option value="In 1hr">In 2hr</option>
-                                    <option value="In 5hrs">In 5hrs</option>
+                                    <option value="In 15 minutes">In 30 minutes</option>
+                                    <option value="In 30 minutes">In 1 hour</option>
+                                    <option value="In 1 hour">In 2 hours</option>
+                                    <option value="In 5 hours">In 5 hours</option>
                                     <option value="Next day">Next day</option>
                                 </select>
                                 <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
@@ -193,7 +194,7 @@
                         </div>
 
                         <div class="form-group" hidden>
-                            <label for="state">Where are you located ? :</label>
+                            <label for="state">Where are you located? :</label>
                             <div class="form-select" required>
                                 <select name="delivery" id="deliver" onchange="EveryResults(this.value)">
                                     <option value=""></option>
@@ -212,7 +213,7 @@
 
 
                         <div class="form-group" id="laminationDiv" hidden="">
-                            <label for="state">Do you want Lamination ?  :</label>
+                            <label for="state">Do you want Lamination?  :</label>
                             <div class="form-select">
                                 <select name="lamination" id="lamination" onchange="submitOutFunc()">
                                     <option value=""></option>
@@ -224,7 +225,7 @@
                         </div>
 
                         <div class="form-group" id="envelopeDiv" hidden="">
-                            <label for="state">Do you want Envelope ?  :</label>
+                            <label for="state">Do you want Envelope?  :</label>
                             <div class="form-select">
                                 <select name="envelope" id="envelope" onchange="submitOutFunc()">
                                     <option value=""></option>
@@ -236,7 +237,7 @@
                         </div>
 
                         <div class="form-group" id="bindingDiv" hidden="">
-                            <label for="state">Do you want Binding ?  :</label>
+                            <label for="state">Do you want Binding?  :</label>
                             <div class="form-select">
                                 <select name="binding" id="binding" onchange="submitOutFunc()">
                                     <option value=""></option>

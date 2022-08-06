@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const mysql = require("mysql");
+const { createPool } = require("mysql");
 const noodemailer = require("nodemailer");
 const { response } = require("express");
 const port = 3000;
@@ -17,6 +17,22 @@ app.use(
   })
 );
 app.use(cors());
+
+// connecting to database
+// const pool = createPool({
+//   host: "localhost",
+//   user: "root",
+//   password: "",
+//   database: "adwinpa_business",
+//   connectionLimit: 10,
+// });
+
+// pool.query(`select * from pickup`, (err, result, fields) => {
+//   if (err) {
+//     return console.log(err);
+//   }
+//   console.log(result);
+// });
 
 // Route that handles pick it up logic
 app.post("/pick-it", async (req, res) => {
@@ -52,22 +68,22 @@ app.post("/pick-it", async (req, res) => {
   var payment = req.body.payment;
   var estimatedcost = req.body.estimatedcost;
 
-  var from = "godfreykwametwene@gmail.com";
-  var to = "godfreykwametwene@gmail.com";
+  var from = email;
+  var to = "adwinpabusiness@gmail.com";
   var subject = `${name} has placed an Order`;
   var message = `Name : ${name}
                  Contact : ${contactno}
                  Email : ${email}
                  Colored Or Black and White :  ${coloredBlackWhite}
-                 Colored : ${color}
-                 Black and White : ${blacknwhite}
+                 Colored : GHS ${color}
+                 Black and White :GHS ${blacknwhite}
                  Uploaded File : ${file}
                  Number Of Copies : ${copies}
                  Pick Up Time : ${pickuptime}
-                 Lamination : ${lamination}
-                 Envelope : ${envelope}
-                 Binding : ${binding}
-                 Payment Method : ${payment} <br /> 
+                 Lamination :GHS ${lamination}
+                 Envelope :GHS ${envelope}
+                 Binding :GHS ${binding}
+                 Payment Method : ${payment}
                  Brief Description : ${description}
                  Estimated Cost : ${estimatedcost}
                  `;
@@ -75,8 +91,8 @@ app.post("/pick-it", async (req, res) => {
   var transporter = noodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "godfreykwametwene@gmail.com",
-      pass: "jzvjofcymlboqbcr",
+      user: "adwinpabusiness@gmail.com",
+      pass: "jtmzqosixmogunah",
     },
   });
 
