@@ -90,13 +90,13 @@
                     <img src="https://i0.wp.com/www.alphr.com/wp-content/uploads/2020/11/pixabay-printer-1910685_1280.png?ssl=1" style="height: 600px; width: 700px" alt="">
                 </div>
                 <div class="signup-form">
-                    <form action="http://localhost:3000/pick-it" method="Post" class="register-form" id="register-form">
+                    <form action="" method="POST" class="register-form" id="pickUpForm">
                         <h3 style="font-size: 25px; font-weight: bold; padding-bottom: 20px;">Print for me to pick it up</h3>
                        
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">Name :</label>
-                                <input type="text" name="name" id="name" required/>
+                                <input type="text" name="name" id="username" onchange="checkName()" required/>
                             </div>
                             <div class="form-group">
                                 <label for="contactno">Contact No :</label>
@@ -110,7 +110,7 @@
 
                         <div class="form-group">
                             <label for="address">Email Address :</label>
-                            <input type="text" name="email" id="address" required/>
+                            <input type="text" name="email" id="emailAddress" required/>
                         </div>
 
                         <div class="form-group">
@@ -303,6 +303,54 @@
     <script src="https://www.gstatic.com/firebasejs/9.9.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.9.0/firebase-analytics.js"></script> -->
 
+    <script>
+        const myForm = document.getElementById('pickUpForm');
+         
+        function checkName(){
+            var uname = document.getElementById('username').value;
+            console.log(uname);
+        }
+        // var customer = document.forms["pickUpForm"]["username"].value;
+        // // var customer = document.getElementById('name').value;
+        // console.log(customer);
+        myForm.addEventListener('submit', function(e){
+            e.preventDefault();
+
+            var customer = document.getElementById('username').value;
+            var contactNo = document.getElementById('contactno').value;
+            var emailAddress = document.getElementById('emailAddress').value;
+            
+            const formData = new FormData(this);
+
+            const myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
+
+            var raw = JSON.stringify({
+            "name": customer,
+            "contactNo": contactNo,
+            "email": emailAddress,
+            "printLayout": "Colored",
+            "printLayoutDetails": "A4(plain paper)",
+            "fileName": "myresume.txt",
+            "noOfPrintOuts": 4,
+            "pickUpTime": "In 30 minutes",
+            "description": "its mine",
+            "estimatedCost": 10
+            });
+
+            var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+            };
+
+            fetch("https://adwinpa-business-api.herokuapp.com/api/pickup/add-new-pickup", requestOptions)
+            .then(response => response.text())
+            .then(result => console.log(result))
+            .catch(error => console.log('error', error));
+        });
+    </script>
 
     
    
