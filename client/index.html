@@ -9,11 +9,8 @@
     <meta name="author" content="TemplateMo">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>  
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  
 
     <title>Adwinpa Business</title>
 <!--
@@ -47,13 +44,1112 @@ https://templatemo.com/tm-540-lava-landing-page
     </div>
     <!-- ***** Preloader End ***** -->
 
-    
+        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Open modal for @mdo</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">Open modal for @fat</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Open modal for @getbootstrap</button> -->
+        
+        <!--/////////////////////////////// Start of Print for me to pick it up Modal ///////////////////////////////-->
+        <div class="modal fade" id="print_pick_it_up" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Print for me to pick it up</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form>
+
+                    
+                        <div class="form-group">
+                            <label for="name">Name :</label>
+                            <input type="text" class="form-control" name="name" id="username" onchange="checkName()" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactno">Contact No :</label>
+                            <input type="phone" class="form-control" name="contactno" id="contactno" required/>
+                        </div>
+                  
+
+                    <div class="form-row">
+                        
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Email Address :</label>
+                        <input type="text" class="form-control" name="email" id="emailAddress" required/>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="state">Colored Or Black & White ? :</label>
+                        <div class="form-select">
+                            <select name="coloredBlackWhite" class="form-control" id="coloredBlackWhite" onchange="disableColorOrBW(this)">
+                                <option value=""></option>
+                                <option value= "colored" >Colored</option>
+                                <option value= "black and white" >Black and White</option>
+                            </select>
+                            <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="colordiv" type="hidden">
+                        <label>Colored :</label>
+                        <div class="form-select">
+                            <select name="color" class="form-control" id="color" disabled="" onchange="submitOutFunc()">
+                                <option value=""></option>
+                                <option value= 2 >A4 (plain paper)</option>
+                                <option value= 5 >Picture (plain paper)</option>
+                                <option value= 10 >Picture (photopaper)</option>
+                                <option value= 1.5 >Envelope (DL)</option>
+                            </select>
+                            <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                        </div>
+                    </div>
+                    <div class="form-group" id="blacknwhitediv">
+                        <label>Black & White :</label>
+                        <div class="form-select">
+                            <select name="blacknwhite" class="form-control" id="blacknwhite" disabled="" onchange="submitOutFunc()" >
+                                <option value=""></option>
+                                <option value= 1 >Black & White (A4)</option>
+                                <option value= 2 >Black & White (A3)</option>
+                            </select>
+                            <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Upload file :</label>
+                        <input type="file" name="file" class="form-control" id="file"  accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required/>
+                    </div>
+
+                    
+                    <div class="form-group">
+                        <label for="state">How many printouts? :</label>
+                        <div class="form-select">
+                            <select name="copies" class="form-control" id="copies" onchange="submitOutFunc(); disableEnabled(this); ">
+                                <option></option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                            <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="state">When do you want to pick it up? :</label>
+                        <div class="form-select" required>
+                            <select name="pickuptime" class="form-control" id="pickup">
+                                <option value=""></option>
+                                <option value="In 15 minutes">In 30 minutes</option>
+                                <option value="In 30 minutes">In 1 hour</option>
+                                <option value="In 1 hour">In 2 hours</option>
+                                <option value="In 5 hours">In 5 hours</option>
+                                <option value="Next day">Next day</option>
+                            </select>
+                            <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group" hidden>
+                        <label for="state">Where are you located? :</label>
+                        <div class="form-select" required>
+                            <select name="delivery" class="form-control" id="deliver" onchange="EveryResults(this.value)">
+                                <option value=""></option>
+                                <option value="3">American Farm</option>
+                                <option value="6">Nsuonano</option>
+                                <option value="5">Assemblies</option>
+                                <option value="5">Top Town</option>
+                                <option value="3">50-50</option>
+                                <option value="8">Peace Town</option>
+                                <option value="6">Free Town</option>
+                                <option value="6">Atsia</option>
+                            </select>
+                            <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group" id="laminationDiv" hidden="">
+                        <label for="state">Do you want Lamination?  :</label>
+                        <div class="form-select">
+                            <select name="lamination" class="form-control" id="lamination" onchange="submitOutFunc()">
+                                <option value=""></option>
+                                <option value="5">Yes</option>
+                                <option value="0">No</option>
+                            </select>
+                            <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="envelopeDiv" hidden="">
+                        <label for="state">Do you want Envelope?  :</label>
+                        <div class="form-select">
+                            <select name="envelope" class="form-control" id="envelope" onchange="submitOutFunc()">
+                                <option value=""></option>
+                                <option value="1">Yes</option>
+                                <option value="0">No</option>
+                            </select>
+                            <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="bindingDiv" hidden="">
+                        <label for="state">Do you want Binding?  :</label>
+                        <div class="form-select">
+                            <select name="binding" class="form-control" id="binding" onchange="submitOutFunc()">
+                                <option value=""></option>
+                                <option value="5">Yes</option>
+                                <option value="0">No</option>
+                            </select>
+                            <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="birth_date">Describe your work if not mentioned above :</label>
+                        <textarea type="text" class="form-control" name="description" id="above"></textarea>
+                    </div>
+                    <!-- <div class="form-group">
+                        <label for="pincode">Pincode :</label>
+                        <input type="text" name="pincode" id="pincode">
+                    </div> -->
+
+                    <div class="form-group">
+                        <label for="state">Payment Mode :</label>
+                        <div class="form-select">
+                            <select name="payment" class="form-control" id="payment" onchange="enableMomo(this)">
+                                <option value=""></option>
+                                <option value="1">Cash</option>
+                                <option value="2">MoMo</option>
+                                
+                            </select>
+                            <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="momo" hidden>
+                        <label for="course" >For MoMo : Pay it to (054 544 6826) Fredrick Ankamah Twene</label>
+                    </div>
+                    <div class="form-group" id="estimatedCost" hidden="">
+                        <label for="number">Estimated Cost :</label>
+                        <input type="text" class="form-control" name="estimatedcost" id="tot_cost" />
+                    </div>
+
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" id="btnSave">Send message</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--/////////////////////////////// End of Print for me to pick it up ///////////////////////////////-->
+
+
+
+         <!--/////////////////////////////// Start of Print and deliver it to me ///////////////////////////////-->
+         <div class="modal fade" id="print_deliver_it_to_me" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Print and deliver them to me</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    
+                        <div class="form-group">
+                            <label for="name">Name :</label>
+                            <input type="text" class="form-control" name="name" id="name" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactno">Contact No :</label>
+                            <input type="phone" class="form-control" name="contactno" id="contactno" required/>
+                        </div>
+                    
+
+                    <div class="form-group">
+                        <label for="address">Email Address :</label>
+                        <input type="text" class="form-control" name="email" id="address" required/>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="state">Colored Or Black & White ? :</label>
+                        <div class="form-select">
+                            <select name="coloredBlackWhite" class="form-control" id="coloredBlackWhite" onchange="disableColorOrBW(this)">
+                                <option value=""></option>
+                                <option value= "colored" >Colored</option>
+                                <option value= "black and white" >Black and White</option>
+                            </select>
+                            <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="colordiv" type="hidden">
+                        <label>Colored :</label>
+                        <div class="form-select">
+                            <select name="color" id="color" class="form-control" disabled="" onchange="submitOutFunc()">
+                                <option value=""></option>
+                                <option value= 2 >A4 (plain paper)</option>
+                                <option value= 5 >Picture (plain paper)</option>
+                                <option value= 10 >Picture (photopaper)</option>
+                            </select>
+                            <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                        </div>
+                    </div>
+                    <div class="form-group" id="blacknwhitediv">
+                        <label>Black & White :</label>
+                        <div class="form-select">
+                            <select name="blacknwhite" class="form-control" id="blacknwhite" disabled="" onchange="submitOutFunc()" >
+                                <option value=""></option>
+                                <option value= 1 >Black & White (A4)</option>
+                                <option value= 2 >Black & White (A3)</option>
+                            </select>
+                            <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Upload file :</label>
+                        <input type="file" class="form-control" name="file" id="file" required/>
+                    </div>
+
+                    
+                    <div class="form-group">
+                        <label for="state">How many copies ? :</label>
+                        <div class="form-select">
+                            <select name="copies" class="form-control" id="copies" onchange="submitOutFunc(); disableEnabled(this); ">
+                                <option></option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                            <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="state">When do you want it delivered? :</label>
+                        <div class="form-select" required>
+                            <select name="pickup" class="form-control" id="pickup">
+                                <option value=""></option>
+                                <option value="In 15mins">In 30 minutes</option>
+                                <option value="In 30mins">In 1 hour</option>
+                                <option value="In 1hr">In 2 hours</option>
+                                <option value="In 5hrs">In 5 hours</option>
+                                <option value="Next day">Next day</option>
+                            </select>
+                            <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="state">Where are you located ? :</label>
+                        <div class="form-select" required>
+                            <select name="deliver" class="form-control" id="deliver" onchange="submitOutFunc()">
+                                <option value=""></option>
+                                <option value="3">American Farm</option>
+                                <option value="6">Nsuonano</option>
+                                <option value="5">Assemblies</option>
+                                <option value="5">Top Town</option>
+                                <option value="3">50-50</option>
+                                <option value="8">Peace Town</option>
+                                <option value="6">Free Town</option>
+                                <option value="6">Atsia</option>
+                            </select>
+                            <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group" id="laminationDiv" hidden="">
+                        <label for="state">Do you want Lamination ?  :</label>
+                        <div class="form-select">
+                            <select name="lamination" class="form-control" id="lamination" onchange="submitOutFunc()">
+                                <option value=""></option>
+                                <option value="5">Yes</option>
+                                <option value="0">No</option>
+                            </select>
+                            <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="envelopeDiv" hidden="">
+                        <label for="state">Do you want Envelope ?  :</label>
+                        <div class="form-select">
+                            <select name="envelope" class="form-control" id="envelope" onchange="submitOutFunc()">
+                                <option value=""></option>
+                                <option value="1.20">Yes</option>
+                                <option value="0">No</option>
+                            </select>
+                            <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="bindingDiv" hidden="">
+                        <label for="state">Do you want Binding ?  :</label>
+                        <div class="form-select">
+                            <select name="binding" class="form-control" id="binding" onchange="submitOutFunc()">
+                                <option value=""></option>
+                                <option value="5">Yes</option>
+                                <option value="0">No</option>
+                            </select>
+                            <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="birth_date">Describe your work if not mentioned above :</label>
+                        <input type="text" class="form-control" name="above" id="above">
+                    </div>
+                    <!-- <div class="form-group">
+                        <label for="pincode">Pincode :</label>
+                        <input type="text" name="pincode" id="pincode">
+                    </div> -->
+
+                    <div class="form-group">
+                        <label for="state">Payment Mode :</label>
+                        <div class="form-select">
+                            <select name="payment" class="form-control" id="payment" onchange="enableMomo(this)">
+                                <option value=""></option>
+                                <option value="1">Cash</option>
+                                <option value="2">MoMo</option>
+                                
+                            </select>
+                            <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="momo" hidden>
+                        <label for="course" >For MoMo : Pay it to (054 544 6826) Fredrick Ankamah Twene</label>
+                    </div>
+                    <div class="form-group" id="estimatedCost" hidden="">
+                        <label for="number">Estimated Cost :</label>
+                        <input type="text" class="form-control" name="cost" id="tot_cost" />
+                    </div>
+                    <!-- <div class="form-submit">
+                        <button type="submit" id="submit" style="margin-top: 10px;">Submit</button>
+                    </div> -->
+  
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="submit" class="btn btn-primary" id="btnSave">Send message</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--/////////////////////////////// End of Print and Deliver it to me ///////////////////////////////-->
+
+
+
+          <!-- /////////////////////////////// Start of Buy Card Only /////////////////////////////////////////// -->
+          <div class="modal fade" id="buy_card_only" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Buy Card Only</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                        <div class="form-group">
+                            <label for="name">Name :</label>
+                            <input type="text" class="form-control" name="name" id="name" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactno">Contact No :</label>
+                            <input type="phone" class="form-control" name="contactno" id="contactno" required/>
+                        </div>
+
+                    <div class="form-group">
+                        <label for="address">Email Address for receiving card :</label>
+                        <input type="text" class="form-control" name="address" id="address" required/>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="state">what type of card do you want to buy ? :</label>
+                        <div class="form-select" required>
+                            <select name="typeOfCardDo" class="form-control" id="typeOfCardDo" onchange="typeofCard(this.value)">
+                                <option value=""></option>
+                                <option value="16">BECE result checker</option>
+                                <option value="16">WASSCE result checker</option>
+                                <option value="16">NOV-DEC result checker</option>
+                                <option value="16">School placement card</option>
+                            </select>
+                            <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="state">Quantity ? :</label>
+                        <div class="form-select">
+                            <select name="quantity" class="form-control" id="quantity" onchange="BuyCardOnly(this.value)">
+                                <option value=""></option>
+                                <option value= 1>1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                            <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                        </div>
+                    </div>
+
+                  
+                    <div class="form-group">
+                        <label for="state">Payment Mode :</label>
+                        <div class="form-select">
+                            <select name="payment" class="form-control" id="payment" onchange="enableMomo(this)">
+                                <option value=""></option>
+                                <option value="1">Cash</option>
+                                <option value="2">MoMo</option>
+                                
+                            </select>
+                            <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="momo" hidden="">
+                        <label for="course" >For MoMo : Pay it to (054 544 6826) Fredrick Ankamah Twene</label>
+                        <label for="course" style="color: red;" >Note : State your card type(s) as reference</label>
+                    </div>
+                    <div class="form-group" id="estimatedCost" hidden="">
+                        <label for="number">Estimated Cost :</label>
+                        <input type="text" class="form-control" name="cost" id="tot_cost" />
+                    </div>
+                    <!-- <div class="form-submit">
+                        <input type="submit" value="Submit" class="submit" name="submit" id="submit"/>
+                    </div> -->
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="submit" class="btn btn-primary" id="btnSave">Send message</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /////////////////////////////// End Of Buy Card Only /////////////////////////////////////////// -->
+
+
+
+
+          <!-- /////////////////////////////// Start of Buy Card and Check Results /////////////////////////////////////////// -->
+          <div class="modal fade" id="buy_card_check_result" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Buy Card and Check Results</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                        <div class="form-group">
+                            <label for="name">Name :</label>
+                            <input type="text" class="form-control" name="name" id="name" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactno">Contact No :</label>
+                            <input type="phone" class="form-control" name="contactno" id="contactno" required/>
+                        </div>
+
+                    <div class="form-group">
+                        <label for="address">Email Address :</label>
+                        <input type="text" class="form-control" name="address" id="address" required/>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="state">what type of card do you want to buy ? :</label>
+                        <div class="form-select" required>
+                            <select name="typeOfCardDo" class="form-control" id="typeOfCardDo" onchange="typeofCard(this.value); buyCardCheckResults(this.value)">
+                                <option value=""></option>
+                                <option value="16">BECE result checker</option>
+                                <option value="16">WASSCE result checker</option>
+                                <option value="16">NOV-DEC result checker</option>
+                                <option value="15">School placement card</option>
+                            </select>
+                            <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="state">How do you want to get the results ? :</label>
+                        <div class="form-select">
+                            <select name="howtogetResults" class="form-control" id="howtogetResults" onchange="results_delivery(this)">
+                                <option value=""></option>
+                                <option value= 1 >Send to my email address</option>
+                                <option value= 3 >Print for me to pick it up</option>
+                                <option value= 3 >Print and deliver to me</option>
+                            </select>
+                            <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="statemail" hidden="">
+                        <label>State your email ? :</label>
+                        <div class="form-select">
+                            <input type="text" class="form-control" name="address" id="color" required/>
+                        </div>
+                    </div>
+                    <div class="form-group" id="printOut" hidden="">
+                        <label>Print Out :</label>
+                        <div class="form-select">
+                            <select name="blacknwhite" class="form-control" id="blacknwhite" onchange="EveryResults(this.value); buyCardCheckResults(this.value)" >
+                                <option value=""></option>
+                                <option value= 1 >Black & White (A4)</option>
+                                <!-- <option value= 2 >Black & White (A3)</option> -->
+                            </select>
+                            <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="form-group" id="quantity" hidden="">
+                        <label for="state">How many copies ? :</label>
+                        <div class="form-select">
+                            <select name="copiesCardCheck" class="form-control" id="copiesCardCheck" onchange="buyCardCheckResults(this.value)">
+                                <option value=""></option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                            <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="timeP" hidden="">
+                        <label for="state">When do you want pick it up ? :</label>
+                        <div class="form-select" required>
+                            <select name="pickup" class="form-control" id="pickup">
+                                <option value=""></option>
+                                <option value="In 15mins">In 30mins</option>
+                                <option value="In 30mins">In 1hr</option>
+                                <option value="In 1hr">In 2hr</option>
+                                <option value="In 5hrs">In 5hrs</option>
+                                <option value="Next day">Next day</option>
+                            </select>
+                            <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="delivertime" hidden="">
+                        <label for="state">When do you want to get it delivered ? :</label>
+                        <div class="form-select" required>
+                            <select name="pickup" class="form-control" id="pickup">
+                                <option value=""></option>
+                                <option value="In 15mins">In 30mins</option>
+                                <option value="In 30mins">In 1hr</option>
+                                <option value="In 1hr">In 2hr</option>
+                                <option value="In 5hrs">In 5hrs</option>
+                                <option value="Next day">Next day</option>
+                            </select>
+                            <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="location" hidden="">
+                        <label for="state">Where are you located ? :</label>
+                        <div class="form-select" required>
+                            <select name="deliver" class="form-control" id="deliver" onchange="buyCardCheckResults(this.value)">
+                                <option value="">I will pick it up myself</option>
+                                <option value="3">American Farm</option>
+                                <option value="6">Nsuonano</option>
+                                <option value="5">Assemblies</option>
+                                <option value="5">Top Town</option>
+                                <option value="3">50-50</option>
+                                <option value="8">Peace Town</option>
+                                <option value="6">Free Town</option>
+                                <option value="6">Atsia</option>
+                            </select>
+                            <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group" hidden="">
+                        <label for="address">Describe th nearest landmark for delivery :</label>
+                        <input type="describe" class="form-control" name="describe" id="describe" placeholder="eg: opposite elder Duah Drug Store or 4th house on th 1st street opposite the entrance of the American Farm shopping mall" required/>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="birth_date">What is your index number :</label>
+                        <input type="text" class="form-control" name="index" id="index">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="birth_date">What is your date of birth :</label>
+                        <input type="date" class="form-control" name="date" id="date">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="birth_date">What year did you write the exams :</label>
+                        <input type="text" class="form-control" name="exams" id="exams">
+                    </div>
+                    <!-- <div class="form-group">
+                        <label for="pincode">Pincode :</label>
+                        <input type="text" name="pincode" id="pincode">
+                    </div> -->
+
+                    <div class="form-group">
+                        <label for="state">Payment Mode :</label>
+                        <div class="form-select">
+                            <select name="payment" class="form-control" id="payment" onchange="enableMomo(this)">
+                                <option value=""></option>
+                                <option value="1">Cash</option>
+                                <option value="2">MoMo</option>
+                                
+                            </select>
+                            <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="momo">
+                        <label for="course" >For MoMo : Pay it to (054 544 6826) Fredrick Ankamah Twene</label>
+                    </div>
+                    <div class="form-group" id="estimatedCost" hidden="">
+                        <label for="number">Estimated Cost :</label>
+                        <input type="text" class="form-control" class="form-control" name="cost" id="tot_cost" />
+                    </div>
+                    <!-- <div class="form-submit">
+                        <input type="submit" value="Submit" class="submit" name="submit" id="submit"/>
+                    </div> -->
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="submit" class="btn btn-primary" id="btnSave">Send message</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /////////////////////////////// End of Buy Card and Check Results /////////////////////////////////////////// -->
+
+
+
+          <!-- /////////////////////////////// Start of Passport /////////////////////////////////////////// -->
+          <div class="modal fade" id="passport" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Passport</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                        <div class="form-group">
+                            <label for="name">Name :</label>
+                            <input type="text" class="form-control" name="name" id="name" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactno">Contact No :</label>
+                            <input type="phone" class="form-control" name="contactno" id="contactno" required/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address">Email Address :</label>
+                            <input type="text" class="form-control" name="address" id="address" required/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="state">What type of passport do you want ? :</label>
+                            <div class="form-select">
+                                <select name="cbw" id="" class="form-control" onchange="disableColorOrBW(this)">
+                                    <option value=""></option>
+                                    <option value= 1 >New</option>
+                                    <option value= 2 >Renewal</option>
+                                </select>
+                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group" id="colordiv" type="hidden">
+                            <label>When do you want your new passport ? :</label>
+                            <div class="form-select">
+                                <select name="color" class="form-control" id="color" disabled="" onchange="EveryResults(this.value)">
+                                    <option value=""></option>
+                                    <option value= 950 >In 14 days </option>
+                                    <option value= 550 >In 3 months</option>
+                                    <option value= 150 >In 5 months</option>
+                                    <option value= 150 >In over 5 months</option>
+                                </select>
+                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                            </div>
+                        </div>
+                        <div class="form-group" id="blacknwhitediv">
+                            <label>When do you want your passport renewed ? :</label>
+                            <div class="form-select">
+                                <select name="blacknwhite" class="form-control" id="blacknwhite" disabled="" onchange="EveryResults(this.value)" >
+                                    <option value=""></option>
+                                    <option value= 950 >In 14 days </option>
+                                    <option value= 550 >In 3 months</option>
+                                    <option value= 150 >In 5 months</option>
+                                    <option value= 150 >In over 5 months</option>
+                                </select>
+                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address">Upload you birth Certificate :</label>
+                            <input type="file" class="form-control" name="file" id="file" required/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="birth_date">Describe your work if not mentioned above :</label>
+                            <input type="text" class="form-control" name="above" id="above">
+                        </div>
+                        <!-- <div class="form-group">
+                            <label for="pincode">Pincode :</label>
+                            <input type="text" name="pincode" id="pincode">
+                        </div> -->
+
+                        <div class="form-group">
+                            <label for="state">Payment Mode :</label>
+                            <div class="form-select">
+                                <select name="payment" class="form-control" id="payment" onchange="enableMomo(this)">
+                                    <option value=""></option>
+                                    <option value="1">Cash</option>
+                                    <option value="2">MoMo</option>
+                                    
+                                </select>
+                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group" id="momo">
+                            <label for="course" >For MoMo : Pay it to (054 544 6826) Fredrick Ankamah Twene</label>
+                        </div>
+                        <div class="form-group" id="estimatedCost" hidden="">
+                            <label for="number">Estimated Cost :</label>
+                            <input type="text" class="form-control" name="cost" id="tot_cost" />
+                        </div>
+                        <!-- <div class="form-submit">
+                            <input type="submit" value="Submit" class="submit" name="submit" id="submit"/>
+                        </div> -->
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="submit" class="btn btn-primary" id="btnSave">Send message</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /////////////////////////////// End Of Passport /////////////////////////////////////////// -->
+
+
+          <!-- /////////////////////////////// Start of Birth Certificate /////////////////////////////////////////// -->
+          <div class="modal fade" id="birth_cert" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Birth Certificate</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                        <div class="form-group">
+                            <label for="name">Name :</label>
+                            <input type="text" class="form-control" name="name" id="name" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactno">Contact No :</label>
+                            <input type="phone" class="form-control" name="contactno" id="contactno" required/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address">Email Address :</label>
+                            <input type="text" class="form-control" name="address" id="address" required/>
+                        </div>
+
+                        
+
+                        <div class="form-group" id="colordiv" type="hidden">
+                            <label>When do you want the birth certificate ? :</label>
+                            <div class="form-select">
+                                <select name="color" class="form-control" id="color" onchange="EveryResults(this.value)">
+                                    <option value=""></option>
+                                    <option value= 400 >In 1 week </option>
+                                    <option value= 350 >In 2 weeks</option>
+                                    <option value= 300 >In 1 month</option>
+                                </select>
+                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                            </div>
+                        </div>
+                       
+
+                        <div class="form-group">
+                            <label for="address">Upload your Ghana Card :</label>
+                            <input type="file" class="form-control" name="file" id="file" required/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="state">Payment Mode :</label>
+                            <div class="form-select">
+                                <select name="payment" class="form-control" id="payment" onchange="enableMomo(this)">
+                                    <option value=""></option>
+                                    <option value="1">Cash</option>
+                                    <option value="2">MoMo</option>
+                                    
+                                </select>
+                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group" id="momo">
+                            <label for="course" >For MoMo : Pay it to (054 544 6826) Fredrick Ankamah Twene</label>
+                        </div>
+                        <div class="form-group" id="estimatedCost" hidden="">
+                            <label for="number">Estimated Cost :</label>
+                            <input type="text" class="form-control" name="cost" id="tot_cost" />
+                        </div>
+
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="submit" class="btn btn-primary" id="btnSave">Send message</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /////////////////////////////// End Of Birth Certificate /////////////////////////////////////////// -->
+
+
+
+           <!-- /////////////////////////////// Start of university Application /////////////////////////////////////////// -->
+           <div class="modal fade" id="university_application" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">University Application</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                        <div class="form-group">
+                            <label for="name">Name :</label>
+                            <input type="text" class="form-control" name="name" id="name" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactno">Contact No :</label>
+                            <input type="phone" class="form-control" name="contactno" id="contactno" required/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address">Email Address :</label>
+                            <input type="text" class="form-control" name="address" id="address" required/>
+                        </div>
+
+                        
+
+                        <div class="form-group" id="colordiv" type="hidden">
+                            <label>Which institution do you want to apply ? :</label>
+                            <div class="form-select">
+                                <select name="color" class="form-control" id="color" onchange="EveryResults(this.value)">
+                                    <option value=""></option>
+                                    <option value= 50 >KNUST </option>
+                                    <option value= 20 >UG</option>
+                                    <option value= 20>UCC</option>
+                                    <option value= 20>UEW</option>
+                                    <option value= 20>UDS</option>
+                                    <option value= 20>UHAS</option>
+                                    <option value= 20>College of Education (CoE)</option>
+                                    <option value= 20>College of Health (Nursing Training)</option>
+                                    <option value= 20>Other Institution</option>
+                                </select>
+                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address">For Other Institution, State the name of the Institution :</label>
+                            <input type="text" class="form-control" name="address" id="address" required/>
+                        </div>
+                       
+
+                        <div class="form-group">
+                            <label for="address">Upload biometric birth cert, Ghana card, school transcript and/or WASSCE certificate :</label>
+                            <input type="file" class="form-control" name="file" id="file" required/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="state">Payment Mode :</label>
+                            <div class="form-select">
+                                <select name="payment" class="form-control" id="payment" onchange="enableMomo(this)">
+                                    <option value=""></option>
+                                    <option value="1">Cash</option>
+                                    <option value="2">MoMo</option>
+                                    
+                                </select>
+                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group" id="momo">
+                            <label for="course" >For MoMo : Pay it to (054 544 6826) Fredrick Ankamah Twene</label>
+                        </div>
+                        <div class="form-group" id="estimatedCost" hidden="">
+                            <label for="number">Estimated Cost :</label>
+                            <input type="text" class="form-control" name="cost" id="tot_cost" />
+                        </div>
+
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="submit" class="btn btn-primary" id="btnSave">Send message</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /////////////////////////////// End Of University Application /////////////////////////////////////////// -->
+
+
+          <!-- /////////////////////////////// Start of Job Application /////////////////////////////////////////// -->
+          <div class="modal fade" id="job_application" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Job Application</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                        <div class="form-group">
+                            <label for="name">Name :</label>
+                            <input type="text" class="form-control" name="name" id="name" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactno">Contact No :</label>
+                            <input type="phone" class="form-control" name="contactno" id="contactno" required/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address">Email Address :</label>
+                            <input type="text" class="form-control" name="address" id="address" required/>
+                        </div>
+
+                        <div class="form-group" id="colordiv" type="hidden">
+                            <label>Which kind of job do you want to apply ? :</label>
+                            <div class="form-select">
+                                <select name="color" class="form-control" id="color" onchange="EveryResults(this.value)">
+                                    <option value=""></option>
+                                    <option value= 250 >Immigration </option>
+                                    <option value= 250 >Police</option>
+                                    <option value= 250 >Army</option>
+                                    <option value= 250 >Fire service</option>
+                                    <option value= 250 >Prisons service</option>
+                                    <option value= 250 >Ambulance service</option>
+                                    <option value= 150 >Local government</option>
+                                    <option value= 150 >GES</option>
+                                </select>
+                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                            </div>
+                        </div>
+                       
+
+                        <div class="form-group">
+                            <label for="address">Upload the serial number and Pin if you've bought the form already :</label>
+                            <input type="file" class="form-control" name="file" id="file" required/>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="state">Payment Mode :</label>
+                            <div class="form-select">
+                                <select name="payment" class="form-control" id="payment" onchange="enableMomo(this)">
+                                    <option value=""></option>
+                                    <option value="1">Cash</option>
+                                    <option value="2">MoMo</option>
+                                    
+                                </select>
+                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group" id="momo">
+                            <label for="course" >For MoMo : Pay it to (054 544 6826) Fredrick Ankamah Twene</label>
+                        </div>
+                        <div class="form-group" id="estimatedCost" hidden="">
+                            <label for="number">Estimated Cost :</label>
+                            <input type="text" class="form-control" name="cost" id="tot_cost" />
+                        </div>
+                        
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="submit" class="btn btn-primary" id="btnSave">Send message</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /////////////////////////////// End Of Job Application /////////////////////////////////////////// -->
+
+
 
 
     <!-- ***** Header Area Start ***** -->
     <header class="header-area header-sticky">
+
+        
+
+          
         <div class="container">
-            <div class="row">
+            <div class="">
                 <div class="col-12">
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
@@ -66,17 +1162,15 @@ https://templatemo.com/tm-540-lava-landing-page
                             <li class="submenu">
                                 <a href="javascript:;"><button type="button" class="btn btn-primary">PRINT</button></a>
                                 <ul>
-                                    <li><a href="pickIt.html" ><button type="button" class="btn btn-outline-primary">For me to pick it up</button></a></li>
-                                    <li><a href="delivery.html" ><button type="button" class="btn btn-outline-primary">Deliver to me</button></a></li>
-                                    
+                                    <li><button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#print_pick_it_up" data-whatever="@getbootstrap">For me to pick it up</button></li>
+                                    <li><button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#print_deliver_it_to_me" data-whatever="@getbootstrap">Deliver them to me</button></li>
                                 </ul>
                             </li>
                             <li class="submenu">
                                 <a href="javascript:;"><button type="button" class="btn btn-primary">CHECK RESULTS</button></a>
                                 <ul>
-                                    <li><a href="results-buycardOnly.html"><button type="button" class="btn btn-outline-primary">Buy card only</button></a></li>
-                                    <li><a href="buycardcheckresults.html"><button type="button" class="btn btn-outline-primary">Buy card/check results</button></a></li>
-                                    
+                                    <li><button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#buy_card_only" data-whatever="@getbootstrap">Buy card only</button></li>
+                                    <li><button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#buy_card_check_result" data-whatever="@getbootstrap">Buy card/Check</button></li>
                                 </ul>
                             </li>
                             <!-- <li class="scroll-to-section"><a href="designworks.html" >DESIGN WORKS</a> -->
@@ -84,10 +1178,10 @@ https://templatemo.com/tm-540-lava-landing-page
                             <li class="submenu">
                                 <a href="javascript:;"><button type="button" class="btn btn-primary">ONLINE APPLICATION</button></a>
                                 <ul>
-                                    <li><a href="passport.html"><button type="button" class="btn btn-outline-primary">Passport</button></a></li>
-                                    <li><a href="birthcertificate.html"><button type="button" class="btn btn-outline-primary">Birth certificate</button></a></li>
-                                    <li><a href="university.html"><button type="button" class="btn btn-outline-primary">University Application</button></a></li>
-                                    <li><a href="onlinejobs.html"><button type="button" class="btn btn-outline-primary">Job Application</button></a></li>
+                                    <li><button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#passport" data-whatever="@getbootstrap">Passport</button></li>
+                                    <li><button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#birth_cert" data-whatever="@getbootstrap">Birth Certificate</button></li>
+                                    <li><button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#university_application" data-whatever="@getbootstrap">University Application</button></li>
+                                    <li><button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#job_application" data-whatever="@getbootstrap">Job Application</button></li>
                                 </ul>
                             </li>
 
@@ -500,12 +1594,27 @@ https://templatemo.com/tm-540-lava-landing-page
     <script src="assets/js/waypoints.min.js"></script>
     <script src="assets/js/jquery.counterup.min.js"></script>
     <script src="assets/js/imgfix.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.9.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.9.0/firebase-analytics.js"></script>
+   
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script> -->
 
     <!-- Global Init -->
     <script src="assets/js/custom.js"></script>
     <script src="assets/js/databaseConfig.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.9.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.9.0/firebase-analytics.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script>
+        $(function () {
+            $('#btnSave').on('click', function (event) {
+                alert();
+                event.preventDefault();
+            });
+    
+        });
+    
+    </script>
 
 </body>
 </html>
