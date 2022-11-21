@@ -189,7 +189,7 @@ function submitOutFunc() {
 (function ($) {
   $("#submit").on("click", function () {
     e.preventDefault();
-    console.log("Database!");
+    // console.log("Database!");
 
     var FormContainer = document.getElementById("register-form");
     var name = document.getElementById("name").value;

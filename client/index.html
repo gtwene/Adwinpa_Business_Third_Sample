@@ -1628,17 +1628,29 @@ https://templatemo.com/tm-540-lava-landing-page
                 var myHeaders = new Headers();
                     myHeaders.append("Content-Type", "application/json");
 
+                    // var raw = JSON.stringify({
+                    // "name": name,
+                    // "contactNo": contactno,
+                    // "email": email,
+                    // "printLayout": coloredBlackWhite,
+                    // "printLayoutDetails": color ,
+                    // "fileName": file,
+                    // "noOfPrintOuts": copies,
+                    // "pickUpTime": pickup,
+                    // "description": above,
+                    // "estimatedCost": tot_cost
+                    // });
                     var raw = JSON.stringify({
-                    "name": name,
-                    "contactNo": contactno,
-                    "email": email,
-                    "printLayout": coloredBlackWhite,
-                    "printLayoutDetails": color ,
-                    "fileName": file,
-                    "noOfPrintOuts": copies,
-                    "pickUpTime": pickup,
-                    "description": above,
-                    "estimatedCost": tot_cost
+                    "name": "joshua",
+                    "contactNo": "0549380507",
+                    "email": "joshua@gmail.com",
+                    "printLayout": "Colored",
+                    "printLayoutDetails": "A4(plain paper)",
+                    "fileName": "myresume.txt",
+                    "noOfPrintOuts": 4,
+                    "pickUpTime": "In 30 minutes",
+                    "description": "its mine",
+                    "estimatedCost": 10
                     });
 
                     var requestOptions = {
@@ -1648,7 +1660,7 @@ https://templatemo.com/tm-540-lava-landing-page
                     redirect: 'follow'
                     };
 
-                    fetch("https://adwinpa-business-api.herokuapp.com/adwinpa-business-api/pickup/add-new-pickup", requestOptions)
+                    fetch("https://adwinpa-business-api.herokuapp.com/api/pickup/add-new-pickup", requestOptions)
                     .then(response => response.text())
                     .then(result => console.log(result))
                     .catch(error => console.log('error', error));
