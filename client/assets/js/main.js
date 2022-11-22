@@ -140,7 +140,7 @@ function submitOutFunc() {
     Number(envelope) +
     Number(binding) +
     Number(deliver);
-  document.getElementById("tot_cost").value = `GHS ${est_cost}`;
+  document.getElementById("tot_cost").value = Number(est_cost);
 
   console.log(
     blacknwhite * Number(copies) +
